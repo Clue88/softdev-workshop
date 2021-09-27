@@ -8,6 +8,7 @@ A Program to Print a SoftDev Student's Name
 import sys
 from random import randrange
 
+
 def read_names(filename: str):
     """Reads a text file containing a list of names, where each line contains
     one name, and returns a list of the names."""
@@ -15,10 +16,11 @@ def read_names(filename: str):
     with open(filename, "r") as f:
         file_contents = f.read()
     names = file_contents.split("\n")
-    
+
     # Remove empty lines
     names = [name for name in names if name]
     return names
+
 
 def main():
     """Prints a random student name given two files containing lists of names,
@@ -34,6 +36,7 @@ def main():
     # Pick a random name from the list of pd1 and pd2 names
     name_index = randrange(len(names))
     print(names[name_index])
+
 
 if __name__ == "__main__":
     main()
