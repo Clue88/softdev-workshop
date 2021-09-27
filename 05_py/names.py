@@ -28,7 +28,7 @@ import sys
 from random import randrange
 
 
-def read_names(filename: str):
+def read_names(filename: str) -> list:
     """Reads a text file containing a list of names, where each line contains
     one name, and returns a list of the names."""
     file_contents = ""
@@ -41,7 +41,7 @@ def read_names(filename: str):
     return names
 
 
-def main():
+def main() -> None:
     """Prints a random student name. Takes two lists of names, from the command
     line, where each argument is a path to a file containing a list of names."""
     if len(sys.argv) != 3:
