@@ -1,1 +1,2 @@
 black==21.9b0
+pyflakes==2.3.1
