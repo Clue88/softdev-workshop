@@ -63,6 +63,41 @@ list(occupations.keys())
 
 ### GitHub Flavored Markdown
 
+Markdown is an easy way to indicate formatting and styling in
+plaintext. GitHub supports Markdown styling, allowing us to make
+things look pretty. In general GFM is a variant of Markdown but
+has basically the same features. The following is a list of
+common markdown format examples that are useful for
+writing documentation.
+
+# Header 1 (similar to `<h1>`)
+## Header 2
+### It keeps going after this
+#### Subheadings and subheadings
+
+`This is a code snippet`
+```
+This is also a code snippet, but with
+many
+lines.
+These are helpful for including code because
+they have a fixed-width font.
+```
+
+- [ ] A checkbox
+- [x] A checked box
+
+| Table Header 1 | Table Header 2 |
+| --- | --- |
+| Row content | Row content |
+
+1. A list
+2. It's ordered
+
+* An unordered list
+* We get bullets
+
+**Bold** and *italics*
 
 ### Weighted Randomized Selection
 
