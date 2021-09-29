@@ -1,6 +1,7 @@
-Pasta Noodles - Christopher Liu, Tami Takada, Tina Nguyen
-SoftDev
-K06 -- Weighted Random Occupation Picker
+# K06 -- Weighted Random Occupation Picker
+
+Pasta Noodles - Christopher Liu, Tami Takada, Tina Nguyen </br>
+SoftDev </br>
 2021-09-29
 
 ### File I/O
