@@ -43,7 +43,7 @@ def read_occupations(filename: str) -> dict:
         # We ignore the first header line with the column titles.
         next(reader)
 
-        for index, row in enumerate(reader):
+        for row in reader:
             job_class = row[0]
             percentage = row[1]
             occupations[job_class] = float(percentage)
