@@ -4,7 +4,7 @@ Pasta Noodles - Christopher Liu, Tami Takada, Tina Nguyen </br>
 SoftDev </br>
 2021-09-29
 
-### File I/O
+## File I/O
 For the input, we used the CSV reader to go through each line and added the row
 contents to a dictionary. The CSV module is useful because we don't have to
 worry about edge cases like if there is a comma inside one of the values.
@@ -21,7 +21,7 @@ To skip a line, we used `next(reader)`, which we did to skip the row with the
 column headers. `next()` returns the next unread row. Thus, when we looped over
 the reader, we didn't get the first line.
 
-### Dictionaries
+## Dictionaries
 A dictionary is an unordered list of key-value pairs. Keys and values can be
 any type, and we use these unique keys to find corresponding values.
 
@@ -42,7 +42,7 @@ We can use `.keys()` and `.values()` to return an object containing the keys
 and values of a dictionary, respectively. We can then loop over that object to
 get the keys and values.
 
-### Lists
+## Lists
 A list is another Python data structure. It is convenient for accessing
 specific items at a given index.
 
@@ -54,14 +54,14 @@ list(occupations.keys())
 # converts the set of keys in the dictionary to a list
 ```
 
-### Weighted Randomized Selection
+## Weighted Randomized Selection
 
 
-### Other
+## Other
 
 
 
-### GitHub Flavored Markdown
+## GitHub Flavored Markdown
 Markdown is an easy way to indicate formatting and styling in plaintext. GitHub
 supports Markdown styling, allowing us to make things look pretty. GitHub
 Flavored Markdown (GFM) is a variant of Markdown that incorporates
