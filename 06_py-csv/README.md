@@ -55,9 +55,42 @@ list(occupations.keys())
 ```
 
 ## Weighted Randomized Selection
+The goal of this program is to choose an occupation randomly while the results 
+are weighted by their corresponding percentages. 
 
+We added an "other" category since the total percentage was 99.8% instead of
+100%, so the "other" category has a percentage of 0.2%. There are 22
+occupations total (23 if we include the "other" category) and each is weighted
+by its corresponding percentage. For example, the percentage associated with
+Sales is 10.2%, so that means that it has a 10.2% chance of being selected. If
+the results were not weighted, then each category would have a 1/23 chance of
+being the result.
 
-## Other
+We implemented this by using `random.choices()`. This method chooses a random
+element from the sequence and weighs the possibility of each result.
+
+The format is shown:
+```
+random.choices(sequence, weights = (weighted values in a list))
+```
+
+We converted the keys (job classes) and the values (percentages) of the
+dictionary to lists to use in random.choices(). 
+```
+job_classes = list(occupations.keys())
+percentages = list(occupations.values())
+```
+
+After that, we used the lists above as shown:
+```
+choice = random.choices(job_classes, weights = percentages)[0]
+```
+
+`random.choices()` returns a list of randomly selected values, and we made the
+variable "choice" the first value in the list. Then, we returned that value in
+the function.
+
+## Other/Miscellaneous
 
 
 
