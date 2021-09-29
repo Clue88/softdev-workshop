@@ -18,6 +18,14 @@ K06 -- Weighted Random Occupation Picker
 # that works quite easily with the dictionary entries we have. We then return
 # the selected job class.
 
+# How to use.
+# This script works in two ways. You can either run it as a script on its own,
+# in which case it will read from occupations.csv in the same directory and
+# print the selected job class, or you can use the method separately, calling
+# occupations.random_occupation(filename) and passing in the path to the CSV
+# file as the filename, in which case it will return a string containing the
+# selected job class.
+
 import csv
 import random
 
