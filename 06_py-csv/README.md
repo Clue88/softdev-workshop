@@ -2,6 +2,7 @@
 
 Pasta Noodles - Christopher Liu, Tami Takada, Tina Nguyen </br>
 SoftDev </br>
+K07 -- README for K06 </br>
 2021-09-29
 
 ## File I/O
