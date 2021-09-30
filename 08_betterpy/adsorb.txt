@@ -1,0 +1,19 @@
+Questions:
+* How should the remaining 0.2% not assigned to a job class be handled?
+* What is a defaultdict?
+
+Comments:
+* Different groups interpreted the remaining 0.2% (the occupations list did not
+    add up to 100%) in different ways, opting for nothing, "Other",
+    "Unemployed", etc.
+* Many groups split the two tasks (file reading and weighted random selection)
+    into two methods.
+* Many groups did not follow Python capitalization conventions, using camelCase
+    to name variables and methods instead of the conventional snake_case.
+
+Concerns:
+* Using init() as a method name is likely to be confused with __init__().
+* Using .keys() and .values() would only work after Python 3.7 because in prior
+    versions the order of the keys and values would not necessarily correspond
+    with each other. In previous versions, we would have had to use .items()
+    and split the returned tuples.
