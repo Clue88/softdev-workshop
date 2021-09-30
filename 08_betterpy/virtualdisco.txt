@@ -1,0 +1,25 @@
+Iced Macchiato: Christopher Liu, Tina Nguyen, Lucas Lee
+SoftDev
+K08 -- Virtual Insanity
+2021-09-30
+
+python3 -m venv ~/myherozero
+
+This command creates a new virtual environment at the given directory, in this
+case ~/myherozero, and creates the directory if it doesn't exist. It executes
+the contents of the venv module (as indicated by the -m flag).
+
+The venv module is a built-in module to create virtual environments, which
+are isolated runtimes that allow Python users to keep and update packages
+within a single project. Within a virtual environment, programs will have
+access to only the modules installed in the virutal environment directory,
+allowing programmers to manage and update package versions.
+
+Why do we use virtual environments? It's super helpful to be able to keep all
+of the dependencies (the packages a project uses) in one place, where we can
+manage and update them without worrying about how other projects or the rest of
+the Python installation affects it.
+
+Sources:
+* Python venv documentation (https://docs.python.org/3/tutorial/venv.html)
+* Python glossary (https://docs.python.org/3/glossary.html#term-virtual-environment)

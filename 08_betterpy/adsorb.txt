@@ -1,3 +1,8 @@
+Iced Macchiato: Christopher Liu, Tina Nguyen, Lucas Lee
+SoftDev
+K08 -- Cross Pollination
+2021-09-30
+
 Questions:
 * How should the remaining 0.2% not assigned to a job class be handled?
 * What is a defaultdict?
