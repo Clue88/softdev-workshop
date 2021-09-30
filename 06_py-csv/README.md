@@ -55,7 +55,7 @@ list(occupations.keys())
 ```
 
 ## Weighted Randomized Selection
-The goal of this program is to choose an occupation randomly while the results 
+The goal of this program is to choose an occupation randomly while the results
 are weighted by their corresponding percentages. 
 
 We added an "other" category since the total percentage was 99.8% instead of
@@ -91,8 +91,21 @@ variable "choice" the first value in the list. Then, we returned that value in
 the function.
 
 ## Other/Miscellaneous
+In Python 3, the return type of a function can be listed in the function header
+to hint at what will be returned from the function.
 
+Here's an example:
+```
+def random_occupation(filename: str) -> str:
+    return 'occupation'
+```
 
+However, this is only an annotation, and it will not throw an error if you
+return something that is not of the type indicated.
+
+The type annotation can also be used for parameters, as can be seen in the
+example above. Again, it is not required, and no error will be thrown if you
+call the function with an argument that is not of the type specified.
 
 ## GitHub Flavored Markdown
 Markdown is an easy way to indicate formatting and styling in plaintext. GitHub
