@@ -15,6 +15,12 @@ within a single project. Within a virtual environment, programs will have
 access to only the modules installed in the virutal environment directory,
 allowing programmers to manage and update package versions.
 
+A package contains modules, which are Python files, with potentially useful
+methods in them. Those methods could save you from writing thousands of lines
+of code and do things (like act as a web microframework) without us needing to
+fully understand the underlying complexity. You would get these packages from
+https://pypi.org or with the pip command.
+
 Why do we use virtual environments? It's super helpful to be able to keep all
 of the dependencies (the packages a project uses) in one place, where we can
 manage and update them without worrying about how other projects or the rest of
