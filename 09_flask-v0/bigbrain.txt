@@ -1,0 +1,24 @@
+Strawberry Squad: Christopher Liu, Justin Morrill, Sir Wallace III, Gregory
+SoftDev
+K09 -- First Flask App
+2021-10-01
+
+Q0: This looks a lot like a Java constructor, so this is probably creating a
+new instance of the Flask class.
+
+Q1: In a filesystem, "/" refers to the root directory, so this is probably the
+equivalent of the root path for @app.route.
+
+Q2: This will print to the console.
+
+Q3: This will appear in the webpage returned at the root path, accessible from
+localhost (127.0.0.1). Flask works by calling the associated method
+under the @app.route decorator and returns the result as HTML.
+
+Q4: The dot notation means that run() is a method of app, our instance of the
+Flask class.
+
+New Notes:
+Viewing the page source shows that the source is literally only the words "No
+hablo queso!", without HTML tags or anything else. The webserver only returns
+what is returned in the hello_world function.
