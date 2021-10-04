@@ -1,2 +1,2 @@
-pyflakes . && \
-black --check .
+pyflakes *_* && \
+black --check *_*
