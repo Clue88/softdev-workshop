@@ -12,7 +12,7 @@ import occupations
 app = Flask(__name__)
 
 
-@app.route("/") # Assign function to route
+@app.route("/")  # Assign function to route
 def display_occupation():
     # Print out trio name and roster and skips two lines
     output = "STD Trio: Christopher Liu, Tina Nguyen, Tami Takada</br></br>"
@@ -28,12 +28,11 @@ def display_occupation():
     # This prints out a randomly chosen occupation (weighted by the percents)
     # that is returned from choose_from_dict() and skips two lines
 
-
     output += "<strong>List of Jobs:</strong></br>"
     # Precedes a printed list of all the jobs in occupations.csv
     for job in jobs.keys():
-    # Loops through all the keys in the dictionary and prints the job out,
-    # going to the next line each time it prints
+        # Loops through all the keys in the dictionary and prints the job out,
+        # going to the next line each time it prints
         output += job + "</br>"
 
     return output
