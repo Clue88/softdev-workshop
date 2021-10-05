@@ -24,16 +24,22 @@ def display_occupation():
 
     output += "<strong>Selected Job:</strong> "
     # The randomly chosen job will be printed after this string
-    output += occupations.choose_from_dict(jobs) + "</br></br>"
+    selected_job = occupations.choose_from_dict(jobs)
+    output += selected_job + "</br></br>"
     # This prints out a randomly chosen occupation (weighted by the percents)
     # that is returned from choose_from_dict() and skips two lines
 
     output += "<strong>List of Jobs:</strong></br>"
+    output += "<ul>"
     # Precedes a printed list of all the jobs in occupations.csv
     for job in jobs.keys():
         # Loops through all the keys in the dictionary and prints the job out,
         # going to the next line each time it prints
-        output += job + "</br>"
+        if job == selected_job:
+            output += "<li style='color:#638cc2'><strong>" + job + "</strong></li>"
+        else:
+            output += "<li>" + job + "</li>"
+    output += "</ul>"
 
     return output
 
