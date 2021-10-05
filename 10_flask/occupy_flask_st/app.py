@@ -31,18 +31,14 @@ def display_occupation():
 
     output += "<strong>List of Jobs:</strong></br>"
     output += "<ul>"
-    colors = ["red", "orange", "gold", "limegreen", "powderblue", "magenta"]
-    num = 0
-    
     # Precedes a printed list of all the jobs in occupations.csv
     for job in jobs.keys():
         # Loops through all the keys in the dictionary and prints the job out,
         # going to the next line each time it prints
         if job == selected_job:
-            output += "<li style='color: black; background-color: yellow'><strong>" + job + "</strong></li>"
+            output += "<li><strong>" + job + "</strong></li>"
         else:
-            output += "<li style='color: " + colors[num % len(colors)] + "'>" + job + "</li>"
-            num += 1
+            output += "<li>" + job + "</li>"
     output += "</ul>"
 
     return output
