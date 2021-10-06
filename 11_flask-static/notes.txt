@@ -13,4 +13,4 @@ If we make a Python file and add it to the static directory, it also tries to
 download the file contents, but as a Python file instead.
 
 It looks like the way files are handled/displayed is dependent on the file
-extension (.html, etc.)
+extension (.html, no extension, .py, etc.)
