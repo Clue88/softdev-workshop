@@ -35,10 +35,7 @@ def display_occupation():
     for job in jobs.keys():
         # Loops through all the keys in the dictionary and prints the job out,
         # going to the next line each time it prints
-        if job == selected_job:
-            output += "<li><strong>" + job + "</strong></li>"
-        else:
-            output += "<li>" + job + "</li>"
+        output += "<li>" + job + "</li>"
     output += "</ul>"
 
     return output
