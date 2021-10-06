@@ -1,0 +1,16 @@
+STD Trio: Christopher Liu, Tina Nguyen, Tami Takada
+SoftDev
+K11 -- Some Things Never Change
+2021-10-06
+
+When we try to go to localhost:5000/static/foo (the plaintext file), it tries
+to download the file contents as a text file.
+
+When we go to localhost:5000/static/foo.html (the HTML file), it displays the
+file contents as an HTML webpage.
+
+If we make a Python file and add it to the static directory, it also tries to
+download the file contents, but as a Python file instead.
+
+It looks like the way files are handled/displayed is dependent on the file
+extension (.html, etc.)
