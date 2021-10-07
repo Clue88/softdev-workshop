@@ -1,0 +1,20 @@
+STD Trio: Christopher Liu, Tina Nguyen, Tami Takada
+SoftDev
+K12 -- ...or The Only Constant is Change?
+2021-10-07
+
+Q0: If you remove render_template from this line, the file would not run
+because you need to import render_template for line 23 to work.
+
+Q1: The URL to load that page would be localhost:5000/my_foist_template.
+
+Q2: The template uses the keyword arguments in the render_template method to
+replace the bracketed fields in the template.
+
+Our Observations:
+We noticed that there was the syntax for loading arguments uses curly braces. 
+The code also uses {% endfor %} to end the loop which prints out the list of
+numbers. Double curly braces would be used for variables that could be changed
+by the user. A single curly brace with a percentage sign indicates Python code.
+We can use a template for the user to easily replace variables and the
+variables can be changed within a file.
