@@ -12,9 +12,14 @@ app = Flask(__name__)
 
 @app.route("/occupyflaskst")
 def occupyflaskst():
-    pass
+    jobs = occupations.read_occupations("data/occupations.csv")
+    random_occupation = occupations.choose_from_dict(jobs)
+
+    return render_template(
+        "tablified.html", jobs=jobs, random_occupation=random_occupation
+    )
 
 
-if __name__ == "__main__":  # true if this file NOT imported
-    app.debug = True  # enable auto-reload upon code change
+if __name__ == "__main__":
+    app.debug = True
     app.run()

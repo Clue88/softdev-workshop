@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <title>Occupation Chooser</title>
+</head>
+<body>
+    <h1>Random Occupation and Percentages</h1>
+    <p>
+        Clear Zebra: Christopher Liu, Emma Buller, Reng Zheng
+    </p>
+    <p>
+        Random Occupation: {{ random_occupation }}
+    </p>
+    <table border="1">
+        <tr>
+            <th>Job Class</th>
+            <th>Percentage</th>
+        </tr>
+        {% for job_class, percentage in jobs.items() %}
+        <tr>
+            <td>{{ job_class }}</td>
+            <td>{{ percentage }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
