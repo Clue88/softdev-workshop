@@ -1,0 +1,9 @@
+# Clear Zebra: Christopher Liu, Emma Buller, Reng Zheng
+# SoftDev
+# K13 -- Template for Success
+# 2021-10-08
+
+Notes:
+* Jinja templates look like a combination between string kwargs and
+interpreting Python commands.
+* Jinja templates effectively are pythonic.
