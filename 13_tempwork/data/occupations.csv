@@ -1,24 +1,24 @@
-Job Class,Percentage
-Management,6.1
-Business and Financial operations,5
-Computer and Mathematical,2.7
-Architecture and Engineering,1.7
-"Life, Physical and Social Science",0.9
-Community and Social Service,1.6
-Legal,0.8
-"Education, training and library",6.1
-"Arts, design, entertainment, sports and media",1.7
-Healthcare practioners and technical,5.5
-Healthcare support,2.8
-Protective service,2.3
-Food preparation and serving,8.3
-Building and grounds cleaning and maintenance,3.7
-Personal care and service,4
-Sales,10.2
-Office and administrative support,15.1
-"Farming, fishing and forestry",0.6
-Construction and extraction,4.3
-"Installation, maintenance and repair",3.8
-Production,6.1
-Transportation and material moving,6.5
-Total,99.8
+Job Class,Percentage,Helpful Link
+Management,6.1,https://www.bls.gov/ooh/management/home.htm
+Business and Financial operations,5,https://www.bls.gov/ooh/business-and-financial/home.htm
+Computer and Mathematical,2.7,https://www.bls.gov/ooh/computer-and-information-technology/home.htm
+Architecture and Engineering,1.7,https://www.bls.gov/ooh/architecture-and-engineering/home.htm
+"Life, Physical and Social Science",0.9,https://www.bls.gov/ooh/life-physical-and-social-science/home.htm
+Community and Social Service,1.6,https://www.bls.gov/ooh/community-and-social-service/home.htm
+Legal,0.8,https://www.bls.gov/ooh/legal/home.htm
+"Education, training and library",6.1,https://www.bls.gov/ooh/education-training-and-library/home.htm
+"Arts, design, entertainment, sports and media",1.7,https://www.bls.gov/ooh/arts-and-design/home.htm
+Healthcare practioners and technical,5.5,https://www.bls.gov/ooh/healthcare/home.htm
+Healthcare support,2.8,https://www.bls.gov/ooh/healthcare/home.htm
+Protective service,2.3,https://www.bls.gov/ooh/protective-service/home.htm
+Food preparation and serving,8.3,https://www.bls.gov/ooh/food-preparation-and-serving/home.htm
+Building and grounds cleaning and maintenance,3.7,https://www.bls.gov/ooh/building-and-grounds-cleaning/home.htm
+Personal care and service,4,https://www.bls.gov/ooh/personal-care-and-service/home.htm
+Sales,10.2,https://www.bls.gov/ooh/sales/home.htm
+Office and administrative support,15.1,https://www.bls.gov/ooh/office-and-administrative-support/home.htm
+"Farming, fishing and forestry",0.6,https://www.bls.gov/ooh/farming-fishing-and-forestry/home.htm
+Construction and extraction,4.3,https://www.bls.gov/ooh/construction-and-extraction/home.htm
+"Installation, maintenance and repair",3.8,https://www.bls.gov/ooh/installation-maintenance-and-repair/home.htm
+Production,6.1,https://www.bls.gov/ooh/production/home.htm
+Transportation and material moving,6.5,https://www.bls.gov/ooh/transportation-and-material-moving/home.htm
+Total,99.8,https://www.bls.gov/ooh/
