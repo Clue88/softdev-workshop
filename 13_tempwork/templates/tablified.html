@@ -15,10 +15,10 @@
             <th>Job Class</th>
             <th>Percentage</th>
         </tr>
-        {% for job_class, percentage in jobs.items() %}
+        {% for job_class, data in jobs.items() %}
         <tr>
-            <td>{{ job_class }}</td>
-            <td>{{ percentage }}</td>
+            <td><a href="{{ data['link'] }}">{{ job_class }}</a></td>
+            <td>{{ data["percentage"] }}</td>
         </tr>
         {% endfor %}
     </table>
