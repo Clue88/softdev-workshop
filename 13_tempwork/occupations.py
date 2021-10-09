@@ -23,11 +23,15 @@ def read_occupations(filename: str) -> dict:
         for row in reader:
             job_class = row[0]
             percentage = row[1]
-            occupations[job_class] = float(percentage)
+            link = row[2]
+            occupations[job_class] = {"percentage": float(percentage), "link": link}
 
     # We mark everything not in the occupations list as "Other".
-    total_percentage = occupations["Total"]
-    occupations["Other"] = round(100 - total_percentage, 2)
+    total_percentage = occupations["Total"]["percentage"]
+    occupations["Other"] = {
+        "percentage": round(100 - total_percentage, 2),
+        "link": occupations["Total"]["link"],
+    }
     del occupations["Total"]
 
     return occupations
@@ -38,7 +42,9 @@ def choose_from_dict(occupations: dict) -> str:
     occupations dictionary."""
 
     job_classes = list(occupations.keys())
-    percentages = list(occupations.values())
+    percentages = list(
+        value["percentage"] for value in occupations.values()
+    )  # We extract only the percent data
 
     choice = random.choices(job_classes, weights=percentages)[0]
     return choice
@@ -53,7 +59,7 @@ def random_occupation(filename: str) -> str:
 
 
 def main():
-    print(random_occupation("occupations.csv"))
+    print(random_occupation("data/occupations.csv"))
 
 
 if __name__ == "__main__":
