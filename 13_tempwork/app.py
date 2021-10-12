@@ -11,7 +11,9 @@ app = Flask(__name__)
 
 
 @app.route("/occupyflaskst")
-def occupyflaskst():
+def occupyflaskst() -> str:
+    """Reads in occupations data, chooses a random occupation, and displays the
+    random occupation and occupations data in an HTML table."""
     jobs = occupations.read_occupations("data/occupations.csv")
     random_occupation = occupations.choose_from_dict(jobs)
 
