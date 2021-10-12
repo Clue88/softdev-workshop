@@ -7,3 +7,12 @@ Notes:
 * Jinja templates look like a combination between string kwargs and
 interpreting Python commands.
 * Jinja templates effectively are pythonic.
+
+EGO:
+* The author uses the generic "he" to refer to a programmer as opposed to
+"he or she" or "they".
+* Seek help, laugh off mistakes, be good humored.
+* Emphasis on readability: makes more organized and maintainable code that
+makes every other part easier/faster to develop
+* Looks like many companies are gatekeeping this really efficient form of
+programming: why?
