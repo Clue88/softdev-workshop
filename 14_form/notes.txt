@@ -1,0 +1,13 @@
+CircleTable: Christopher Liu, Yusuf Elsharawy, Naomi Naranjo
+SoftDev
+K14 -- Form and Function
+2021-10-14
+
+* There are two commonly used HTTP request methods: GET and POST. There are
+others (like HEAD, PUT, etc.) but they are less common.
+* We can access the form values from an HTML form that uses GET requests with
+request.args, which is an ImmutableMultiDict with the form input names as keys
+and the form values as the values.
+* We can "overload" a single endpoint to handle multiple request methods -
+Flask will correctly interpret which response function to use depending on the
+HTTP request method.
