@@ -11,18 +11,6 @@ from flask import request  # Facilitate form submission
 app = Flask(__name__)
 
 
-"""
-trioTASK:
-~~~~~~~~~~~ BEFORE RUNNING THIS, ~~~~~~~~~~~~~~~~~~
-...read for understanding all of the code below.
-Some will work as written; other sections will not. Can you predict which?
-Devise some simple tests you can run to "take apart this engine," as it were.
-Execute your tests. Process results.
-PROTIP: Insert your own in-line comments wherever they will help your future
-self and/or current teammates understand what is going on.
-"""
-
-
 @app.route("/", methods=["GET"])
 def disp_loginpage():
     """Returns the login page."""
