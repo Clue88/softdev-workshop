@@ -2,3 +2,9 @@ CircleTable - Christopher Liu, Yusuf Elsharawy, Naomi Naranjo
 SoftDev
 K15 -- Sessions Greetings
 2021-10-18
+
+* del key_name is the same as dict.pop(key_name), except pop() returns the
+value from the specified key
+* Session cookies last for the length of the browser session (closing a tab
+does not remove the cookies, quitting the application does)
+* A secret key (any str or bytes) is required for session cookies
