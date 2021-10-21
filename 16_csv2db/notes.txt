@@ -146,3 +146,11 @@ c.execute("CREATE TABLE roster(name TEXT,
 db.commit() #save changes
 db.close()
 ----------------------------------------------------------
+
+Additional Notes:
+SQLite3 Parameter Substitution:
+If we have a dictionary {"a": 3, "b": "hello"}, we can
+substitute (which also sanitizes) by using a colon and
+the key, e.g., :a and :b.
+
+Returns an error if the table already exists
