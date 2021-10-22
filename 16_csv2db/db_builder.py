@@ -24,10 +24,6 @@ def read_data(filename: str) -> list:
 def main():
     """Imports data from courses.csv and students.csv and puts the data into
     SQL tables."""
-    # Remove existing database if it exists
-    if os.path.exists(DB_FILE):
-        os.remove(DB_FILE)
-
     db = sqlite3.connect(DB_FILE)  # Open if file exists, otherwise create
     c = db.cursor()  # Facilitate db ops -- use cursor to trigger db events
 
@@ -36,6 +32,10 @@ def main():
     # Read data from courses.csv and students.csv
     courses = read_data("courses.csv")
     students = read_data("students.csv")
+
+    # Remove existing tables if exists
+    c.execute("DROP TABLE IF EXISTS courses")
+    c.execute("DROP TABLE IF EXISTS students")
 
     # Create new SQL tables
     c.execute("CREATE TABLE courses (code TEXT, mark INTEGER, id INTEGER)")
