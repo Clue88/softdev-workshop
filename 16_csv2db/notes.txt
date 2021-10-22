@@ -153,4 +153,8 @@ If we have a dictionary {"a": 3, "b": "hello"}, we can
 substitute (which also sanitizes) by using a colon and
 the key, e.g., :a and :b.
 
-Returns an error if the table already exists
+Returns an error if the table already exists.
+
+Passing a list of dictionaries into executemany is equivalent
+to iterating over a list of dictionaries and using execute,
+with a negligible difference in time.

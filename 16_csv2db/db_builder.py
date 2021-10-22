@@ -3,8 +3,9 @@
 # K16 -- All About Database
 # 2021-10-20
 
+import csv
+import os
 import sqlite3  # Enable control of an sqlite database
-import csv  # Facilitate CSV I/O
 
 def read_data(filename: str) -> list:
     """Reads data from a given CSV file and returns a list of dicts for
@@ -23,8 +24,12 @@ def main():
     SQL tables."""
     DB_FILE = "discobandit.db"
 
+    # Remove existing database if it exists
+    if os.path.exists(DB_FILE):
+        os.remove(DB_FILE)
+
     db = sqlite3.connect(DB_FILE)  # Open if file exists, otherwise create
-    c = db.cursor()  # Facilitate db ops -- you will use cursor to trigger db events
+    c = db.cursor()  # Facilitate db ops -- use cursor to trigger db events
 
     # ==========================================================
 
@@ -37,15 +42,13 @@ def main():
     c.execute("CREATE TABLE students (name TEXT, age INTEGER, id INTEGER)")
 
     # Populate SQL tables
-    for course in courses:
-        c.execute("INSERT INTO courses VALUES (:code, :mark, :id)", course)
-    for student in students:
-        c.execute("INSERT INTO students VALUES (:name, :age, :id)", student)
+    c.executemany("INSERT INTO courses VALUES (:code, :mark, :id)", courses)
+    c.executemany("INSERT INTO students VALUES (:name, :age, :id)", students)
 
     # ==========================================================
 
     db.commit()  # Save changes
     db.close()  # Close database
 
-if __name__ == "__main__":
+if __name__ == "__main__":    
     main()
