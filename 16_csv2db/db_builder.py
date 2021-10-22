@@ -7,6 +7,8 @@ import csv
 import os
 import sqlite3  # Enable control of an sqlite database
 
+DB_FILE = "discobandit.db"
+
 def read_data(filename: str) -> list:
     """Reads data from a given CSV file and returns a list of dicts for
     each row."""
@@ -22,8 +24,6 @@ def read_data(filename: str) -> list:
 def main():
     """Imports data from courses.csv and students.csv and puts the data into
     SQL tables."""
-    DB_FILE = "discobandit.db"
-
     # Remove existing database if it exists
     if os.path.exists(DB_FILE):
         os.remove(DB_FILE)
