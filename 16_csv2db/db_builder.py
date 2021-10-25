@@ -4,10 +4,10 @@
 # 2021-10-20
 
 import csv
-import os
 import sqlite3  # Enable control of an sqlite database
 
 DB_FILE = "discobandit.db"
+
 
 def read_data(filename: str) -> list:
     """Reads data from a given CSV file and returns a list of dicts for
@@ -20,6 +20,7 @@ def read_data(filename: str) -> list:
             table_data.append(row)
 
     return table_data
+
 
 def main():
     """Imports data from courses.csv and students.csv and puts the data into
@@ -50,5 +51,6 @@ def main():
     db.commit()  # Save changes
     db.close()  # Close database
 
-if __name__ == "__main__":    
+
+if __name__ == "__main__":
     main()
