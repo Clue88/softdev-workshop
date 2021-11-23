@@ -2,3 +2,7 @@ Clivan -- Christopher Liu, Ivan Mijacika
 SoftDev pd0
 K19 -- NASA Open APIs
 2021-11-23
+
+The trailing newline on the API key text file must be removed.
+The `params` kwarg for `requests.get` allows you to include URL query args in
+a dictionary.

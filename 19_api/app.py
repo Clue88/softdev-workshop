@@ -5,9 +5,8 @@ K19 -- NASA Open APIs
 2021-11-23
 """
 
-import requests
-
 from flask import Flask, render_template
+import requests
 
 app = Flask(__name__)
 
