@@ -1,0 +1,10 @@
+Clivan: Christopher Liu, Ivan Mijacika
+SoftDev pd0
+K18 -- CSS Basics
+2021-11-22
+
+To create multiple columns, one method is to wrap each column in a div, wrap
+all of the column divs in another div, and to add the `float` property to each
+column. You can then set a column width as a percentage of the size of page
+width or a set number of pixels. The important thing is that the element
+after the column must have the `clear: both` property.
