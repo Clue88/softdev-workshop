@@ -103,6 +103,10 @@ K22 -- Bootstrap
       <p>Open the page source to see the individual components and our explanations/notes. If you open the devtools, you can also inspect individual components to see their attributes and change them.</p>
     </div>
 
+    <!--
+      More modifiers! You can add shadows, rounding, etc.
+    -->
+
     <div class="container-xxl my-4 bd-layout">
       <h2>Tiles (with Shadows)</h2>
       <div class="shadow-none p-3 mb-5 bg-light rounded">No shadow</div>
@@ -110,6 +114,13 @@ K22 -- Bootstrap
       <div class="shadow p-3 mb-5 bg-body rounded">Regular shadow</div>
       <div class="shadow-lg p-3 mb-5 bg-body rounded">Larger shadow</div>
     </div>
+
+    <!--
+      We can now get into some components. This is an alert, which you can
+      create with the alert class and color with alert-<color>. Use
+      alert-dismissible, fade, and show, as well as close button to make it
+      dismissible.
+    -->
 
     <div class="container-xxl my-4 bd-layout">
       <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -120,6 +131,12 @@ K22 -- Bootstrap
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
       </div>
     </div>
+
+    <!--
+      Buttons and colors! Use the btn class to make a styled button. You can
+      also see all of the default colors here; you can apply this as a color
+      for any component as well.
+    -->
 
     <div class="container-xxl my-4 bd-layout">
       <h2>Buttons</h2>
@@ -133,6 +150,15 @@ K22 -- Bootstrap
       <button type="button" class="btn btn-dark">Dark</button>
       <button type="button" class="btn btn-link">Link</button>
     </div>
+
+    <!--
+      The row and col classes can be used to make rows and columns for layout.
+      By default, there are 12 (imaginary) columns on the page, so col-8 would
+      span two-thirds of a page, for example.
+
+      Set style="--bs-bg-opacity: .5;" to change the opacity of the background.
+      You can set the attribute to any number between 0 and 1.
+    -->
 
     <div class="container-xxl my-4 pt-3 bd-layout bg-success text-white rounded" style="--bs-bg-opacity: .5;">
       <h2>Rows and Columns</h2>
@@ -161,6 +187,14 @@ K22 -- Bootstrap
         </div>
       </div>
     </div>
+
+    <!--
+      For progress bars, you can set the width to a percentage of 100%. For
+      maximum compatibility, set the aria values as well so that screenreaders
+      and accessibility devices can read your progress bars as well. For
+      loading icons, be sure to include the hidden class that says Loading...
+      for accessibility purposes (default users won't see it).
+    -->
 
     <div class="container-xxl my-4 bd-layout">
       <h2>Progress Bars and Spinny Wheels!</h2>
@@ -198,6 +232,12 @@ K22 -- Bootstrap
         <span class="visually-hidden">Loading...</span>
       </div>
     </div>
+
+    <!--
+      You can set the ids here to whatever you want, but make sure that they're
+      unique and match the target attributes to ensure that the expanding and
+      collapsing work properly.
+    -->
 
     <div class="container-xxl my-4 bd-layout">
       <h2>Accordions</h2>
@@ -243,6 +283,12 @@ K22 -- Bootstrap
       </div>
     </div>
 
+    <!--
+      Including a placeholder value and the form-floating class on the
+      surrounding div will create the cool animation that plays when you click
+      on a field.
+    -->
+
     <div class="container-xxl my-4 bd-layout">
       <h2>Forms</h2>
       <form>
@@ -252,7 +298,7 @@ K22 -- Bootstrap
           <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="form-floating mb-3">
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password">
           <label for="exampleInputPassword1">Password</label>
         </div>
         <div class="mb-3 form-check">
