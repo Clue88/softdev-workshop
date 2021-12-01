@@ -1,0 +1,82 @@
+<!--
+Woofball -- Christopher Liu, Ivan Mijacika
+SoftDev pd0
+K23 -- Foundation
+2021-12-01
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Foundation CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+
+    <title>Foundation Demo</title>
+  </head>
+  <body>
+    <div class="docs-code-live">
+      <ul class="tabs" data-tabs id="example-tabs">
+        <li class="tabs-title">
+          <a href="#panel1" aria-selected="false" aria-controls="panel1" id="panel1-label">Home</a>
+        </li>
+        <li class="tabs-title">
+          <a href="#panel2" aria-selected="false" aria-controls="panel2" id="panel2-label">Login</a>
+        </li>
+        <li class="tabs-title">
+          <a href="#panel3" aria-selected="false" aria-controls="panel3" id="panel3-label">Register</a>
+        </li>
+      </ul>
+    </div>
+
+    <h1>Survey</h1>
+    <form data-abide novalidate>
+      <div class="grid-x grid-margin-x">
+        <div class="cell">
+          <div data-abide-error class="alert callout" style="display: none;">
+            <p><i class="fi-alert"></i> There are some errors in your form.</p>
+          </div>
+        </div>
+      </div>
+      <div class="grid-x grid-margin-x">
+        <div class="cell small-12">
+          <label>Number Required
+            <input type="text" placeholder="1234" aria-describedby="exampleHelpTextNumber" required pattern="number">
+            <span class="form-error">
+              Yo, you had better fill this out, it's required.
+            </span>
+          </label>
+          <p class="help-text" id="exampleHelpTextNumber">Here's how you use this input field!</p>
+        </div>
+        <div class="cell medium-6">
+          <label>Pick something
+            <select id="select" required>
+              <option value=""></option>
+              <option value="Cyber Truck">Cyber Truck</option>
+              <option value="Bicycle">Bicycle</option>
+              <option value="Go-Kart">Go-Kart</option>
+              <option value="Horse">Horse</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="grid-x grid-margin-x">
+        <fieldset class="cell medium-6">
+          <legend>Is?</legend>
+          <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Yes</label>
+          <input type="radio" name="pokemon" value="Blue" id="pokemonBlue" required><label for="pokemonBlue">No</label>
+        </fieldset>
+
+        <fieldset class="cell medium-6">
+          <legend>Check these out</legend>
+          <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
+          <input id="checkbox2" type="checkbox" required><label for="checkbox2">Checkbox 2</label>
+          <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
+        </fieldset>
+      </div>
+    </form>
+  </body>
+</html>

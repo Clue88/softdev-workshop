@@ -1,0 +1,13 @@
+Woofball -- Christopher Liu, Ivan Mijacika
+SoftDev pd0
+K23 -- Foundation
+2021-12-01
+
+DISCO
+Foundation seems much harder to use, as it does not seem to have containers or
+padding or other default layout features. Dynamic features don't work without
+JavaScript.
+
+Q0
+Yes: we consulted Team FTC > FRC to better understand layout features and to
+get dynamic features to work with the provided JavaScript libraries.
