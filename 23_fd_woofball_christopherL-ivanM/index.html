@@ -32,51 +32,81 @@ K23 -- Foundation
       </ul>
     </div>
 
-    <h1>Survey</h1>
+    <div class="grid-x grid-padding-x">
+      <h1>Super Useful Survey</h1>
+    </div>
     <form data-abide novalidate>
-      <div class="grid-x grid-margin-x">
+      <div class="grid-x grid-padding-x">
         <div class="cell">
           <div data-abide-error class="alert callout" style="display: none;">
             <p><i class="fi-alert"></i> There are some errors in your form.</p>
           </div>
         </div>
       </div>
-      <div class="grid-x grid-margin-x">
+      <div class="grid-x grid-padding-x">
         <div class="cell small-12">
-          <label>Number Required
-            <input type="text" placeholder="1234" aria-describedby="exampleHelpTextNumber" required pattern="number">
-            <span class="form-error">
-              Yo, you had better fill this out, it's required.
-            </span>
+          <label>What's your favorite number?
+            <input type="text" placeholder="3.1415926..." aria-describedby="exampleHelpTextNumber" required pattern="number">
           </label>
-          <p class="help-text" id="exampleHelpTextNumber">Here's how you use this input field!</p>
+          <p class="help-text" id="exampleHelpTextNumber">:)</p>
         </div>
         <div class="cell medium-6">
-          <label>Pick something
+          <label>Which of these best describes how you feel about the previous question?
             <select id="select" required>
               <option value=""></option>
-              <option value="Cyber Truck">Cyber Truck</option>
-              <option value="Bicycle">Bicycle</option>
-              <option value="Go-Kart">Go-Kart</option>
-              <option value="Horse">Horse</option>
+              <option value="Please never ask me that question ever again...">Please never ask me that question ever again...</option>
+              <option value="Ok, I guess">Ok, I guess</option>
+              <option value="My day has been made!">My day has been made!</option>
             </select>
           </label>
         </div>
       </div>
-      <div class="grid-x grid-margin-x">
-        <fieldset class="cell medium-6">
-          <legend>Is?</legend>
+      <div class="grid-x grid-margin-x grid-padding-x">
+
+        <fieldset class="cell medium-12">
+          <legend>Check all boxes that apply to you:</legend>
+          <input id="checkbox1" type="checkbox"><label for="checkbox1">The survey took less than 1000 hours</label>
+          <input id="checkbox2" type="checkbox" required><label for="checkbox2">This survey was a good use of my time</label>
+          <input id="checkbox3" type="checkbox"><label for="checkbox3">I felt comfortable answering the question</label>
+        </fieldset>
+
+        <fieldset class="cell small-12">
+          <legend>Would you recommend this survey to a friend?</legend>
           <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Yes</label>
           <input type="radio" name="pokemon" value="Blue" id="pokemonBlue" required><label for="pokemonBlue">No</label>
         </fieldset>
 
-        <fieldset class="cell medium-6">
-          <legend>Check these out</legend>
-          <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-          <input id="checkbox2" type="checkbox" required><label for="checkbox2">Checkbox 2</label>
-          <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
-        </fieldset>
       </div>
+
+      <div class="grid-x grid-padding-x">
+        <div class="medium-12 cell">
+          <p>Do you want to click the button? Of course you do...</p>
+          <button type="button" class="success button">CLICK HERE</button>
+          <fieldset class="cell small-12">
+            <legend>Has this changed your answer to the previous question?</legend>
+            <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Yes</label>
+            <input type="radio" name="pokemon" value="Blue" id="pokemonBlue" required><label for="pokemonBlue">No</label>
+          </fieldset>
+        </div>
+      </div>
+
     </form>
+
+    <br>
+
+    <div class="grid-x grid-padding-x" data-equalizer data-equalize-on="medium" id="sample_eq">
+      <div class="cell medium-5">
+        <div class="callout" data-equalizer-watch>
+          <p>Thank you for taking this survey! If you checked all of the boxes and selected 'Yes'
+             for the other questions, then congrats!</p>
+        </div>
+      </div>
+      <div class="cell medium-5">
+        <div class="callout" data-equalizer-watch>
+          <p>What do you mean it doesn't actually do anything!?  :(</p>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>

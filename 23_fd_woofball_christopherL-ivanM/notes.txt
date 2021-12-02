@@ -11,3 +11,8 @@ JavaScript.
 Q0
 Yes: we consulted Team FTC > FRC to better understand layout features and to
 get dynamic features to work with the provided JavaScript libraries.
+
+Q1
+We prefer Boostrap because of its ease of use for layout purposes and bundled
+JavaScript CDN links. Foundation is much more difficult to use, especially
+because there are so many JS dependencies that need to be separately imported.
