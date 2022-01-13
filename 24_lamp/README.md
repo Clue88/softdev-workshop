@@ -61,6 +61,15 @@ OpenSSH (v6)               ALLOW       Anywhere (v6)
 $ ssh my_username@your_server_ip
 ```
 7. If that works, you can safely exit your root account. For everyday use, you should use your user account, NOT root.
+8. Disable root login from your user account.
+```
+$ sudo vim /etc/ssh/sshd_config
+```
+Set `PermitRootLogin` to `no`.
+9. Restart sshd:
+```
+$ sudo service ssh restart
+```
 
 ### Installing Apache
 1. Update the local package index.
