@@ -1,4 +1,4 @@
-# how-to :: PROVISION A DIGITALOCEAN DROPLET AND INSTALL UBUNTU 20.04.3 AND APACHE2
+# how-to :: PROVISION A DIGITALOCEAN DROPLET AND INSTALL UBUNTU 20.04.3 AND APACHE2 AND DEPLOY A FLASK APP
 ---
 ## Overview
 Flask is not built to serve -- on its own -- persistent or high-traffic sites. Apache, on the other hand, is. Luckily, Apache can be configured to use its industrial-grade machinery to serve Flask and other apps. Deploying your Flask app to an Apache2 server will allow anyone on the web to access your app at any time. 
@@ -120,9 +120,46 @@ $ hostname -I
 ```
 6. View your web page by navigating to `http://your_server_ip`. You should see a default page that says "It works!" Note that HTTPS connections are not enabled by default (see [this article](https://www.digitalocean.com/community/tutorials/how-to-create-a-self-signed-ssl-certificate-for-apache-in-ubuntu-20-04) for more information).
 
+### Deploying a Flask App
+1. Install and enable WSGI.
+```
+$ sudo apt-get install libapache2-mod-wsgi python-dev
+$ sudo a2enmod wsgi
+```
+2. Move to the `/var/www` directory.
+```
+$ cd /var/www
+```
+3. Clone your app. Your app Python files should be within a subdirectory of your git repository (within `/app` for example).
+```
+$ sudo git clone <your-clone-link>
+```
+4. Change ownership of your git repository to the user account.
+```
+$ sudo chown my_username -R your_repo_name
+```
+5. Install pip and venv.
+```
+$ cd your_repo_name
+$ sudo apt-get install python-pip
+$ sudo pip install virtualenv
+```
+6. Create your virtual environment and install your dependencies (if applicable).
+```
+$ sudo virtualenv env
+$ source ./env/bin/activate
+(env) $ sudo pip3 install -r requirements.txt
+```
+7. Test your app.
+```
+$ cd your-app-name/app
+$ python3 __init__.py
+```
+
 ### Resources
 * https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04
 * https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-20-04
+* https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
 
 ---
 
