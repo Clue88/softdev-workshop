@@ -32,7 +32,7 @@ $ sudo apt-get install python3-pip
 5. Create a new virtual environment.
 ```
 $ cd your_repo
-$ python3 -m venv env
+$ sudo python3 -m venv env
 ```
 6. Change the owner of your virtual environment to your regular user.
 ```
