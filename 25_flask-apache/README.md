@@ -48,6 +48,7 @@ $ source env/bin/activate
 (env) $ python3 app/__init__.py
 ```
 You should see your app running on `localhost:5000`.
+
 9. Configure a new virtual host. Note: you can use any text editor (nano, etc.) in place of vim.
 ```
 (env) $ deactivate
@@ -99,7 +100,7 @@ application.secret_key = urandom(32)
 ```
 13. Restart apache.
 ```
-sudo service apache2 restart
+$ sudo service apache2 restart
 ```
 You may see a warning message like this:
 ```
