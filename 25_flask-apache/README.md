@@ -107,7 +107,7 @@ Could not reliably determine the VPS's fully qualified domain name, using 127.0.
 ```
 This is okay; you'll still able to access your virtual host without further issues.
 
-14. Test your app by going to `YOUR_IP_ADDRESS:5000` in a web browser.
+14. Test your app by going to `YOUR_IP_ADDRESS` in a web browser.
 
 ### Resources
 * https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
