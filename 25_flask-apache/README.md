@@ -74,6 +74,7 @@ $ sudo vim /etc/apache2/sites-available/your_app_name.conf
 </VirtualHost>
 ```
 Save and close the file. For vim users, type `:wq`.
+
 11. Enable the virtual host.
 ```
 $ sudo a2ensite your_app_name
@@ -105,6 +106,7 @@ You may see a warning message like this:
 Could not reliably determine the VPS's fully qualified domain name, using 127.0.0.1 for ServerName
 ```
 This is okay; you'll still able to access your virtual host without further issues.
+
 14. Test your app by going to `YOUR_IP_ADDRESS:5000` in a web browser.
 
 ### Resources
