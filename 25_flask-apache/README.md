@@ -14,7 +14,7 @@ Flask is not built to serve -- on its own -- persistent or high-traffic sites. A
 ### Creating a Flask App
 1. Install and enable WSGI.
 ```
-$ sudo apt-get install libapache2-mod-wsgi python-dev
+$ sudo apt-get install libapache2-mod-wsgi-py3 python-dev
 $ sudo a2enmod wsgi
 ```
 2. Move to the `/var/www` directory.
@@ -41,13 +41,14 @@ $ sudo chown -R my_username:my_username env
 7. Install your dependencies if necessary.
 ```
 $ source env/bin/activate
-(env) $ pip3 install -r requirements.txt
+(env) $ sudo pip3 install -r requirements.txt
 ```
 8. Test your app.
 ```
-(env) $ python3 app/__init__.py
+(env) $ sudo python3 app/__init__.py
 ```
 You should see your app running on `localhost:5000`.
+Shut down the app for now, it is serving on localhost, which we don't want.
 
 9. Configure a new virtual host. Note: you can use any text editor (nano, etc.) in place of vim.
 ```
@@ -94,6 +95,7 @@ from os import urandom
 
 logging.basicConfig(stream=sys.stderr)
 sys.path.insert(0,"/var/www/your_app_dir_name/")
+sys.path.insert(0,"/var/www/your_app_dir_name/app/") # If your __init__.py imports any local python modules (i.e. ones in the same diretory that you wrote), this line will be necessary
 
 from your_app_python_dir import app as application
 application.secret_key = urandom(32)
@@ -108,7 +110,7 @@ Could not reliably determine the VPS's fully qualified domain name, using 127.0.
 ```
 This is okay; you'll still able to access your virtual host without further issues.
 
-14. Test your app by going to `YOUR_IP_ADDRESS` in a web browser.
+14. Test your app by going to `http://YOUR_IP_ADDRESS` in a web browser.
 
 ### Resources
 * https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
