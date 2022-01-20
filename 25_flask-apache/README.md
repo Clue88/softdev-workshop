@@ -69,13 +69,15 @@ Paste the following template in the `.conf` file:
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 ```
+Note: In order to deploy multiple apps, you won't be able to deploy both at the top-level route. You can change the `WSGIScriptAlias` from `/` and `/static` to `APP_NAME` and `APP_NAME/static`. [Include part about fixing Flask routes]
+
 Save and close the file. For vim users, type `:wq`.
 
 5. Enable the virtual host.
 ```
 $ sudo a2ensite APP_NAME
 ```
-To disable your site later (in order to deploy a different app, for example), use
+To disable your site, use
 ```
 $ sudo a2dissite APP_NAME
 ```
