@@ -8,85 +8,83 @@ Flask is not built to serve -- on its own -- persistent or high-traffic sites. A
 ### Prerequisites:
 
 - A DigitalOcean droplet with Ubuntu 20.04.3 and Apache2 installed
+- A Flask app with the following file structure (placeholder names will be used throughout the rest of this how-to):
+
+```
+APP_NAME  
+├── APP_SCRIPTS  
+    ├── static  
+    ├── templates  
+    └── __init__.py  
+└── requirements.txt  
+```
 
 ## Instructions
 
 ### Creating a Flask App
-1. Install and enable WSGI.
+1. Install and enable WSGI. When you deploy a new app, you won't need to install the system dependencies again.
 ```
 $ sudo apt-get install libapache2-mod-wsgi-py3 python-dev
 $ sudo a2enmod wsgi
 ```
-2. Move to the `/var/www` directory.
+2. Install your app.
 ```
 $ cd /var/www
-```
-3. Clone your app. Or, write a basic Flask app for testing.
-```
-$ sudo git clone https://github.com/path/to/your/repo.git
-```
-4. Install pip.
-```
+$ sudo git clone REPO_CLONE_LINK
 $ sudo apt-get install python3-pip
-```
-5. Create a new virtual environment.
-```
-$ cd your_repo
+$ cd APP_NAME
 $ sudo python3 -m venv env
-```
-6. Change the owner of your virtual environment to your regular user.
-```
-$ sudo chown -R my_username:my_username env
-```
-7. Install your dependencies if necessary.
-```
 $ source env/bin/activate
 (env) $ sudo pip3 install -r requirements.txt
 ```
-8. Test your app.
+3. Test your app.
 ```
 (env) $ sudo python3 app/__init__.py
 ```
-You should see your app running on `localhost:5000`.
-Shut down the app for now, it is serving on localhost, which we don't want.
-
-9. Configure a new virtual host. Note: you can use any text editor (nano, etc.) in place of vim.
+You should see your app running on `127.0.0.1:5000`. Shut down the app for now.
 ```
 (env) $ deactivate
-$ sudo vim /etc/apache2/sites-available/your_app_name.conf
 ```
-10. Paste the following template, replacing the placeholder text as necessary. For `your_app_python_dir`, include the path to the directory that includes your app's Python files and the `static` and `template` directories (likely `your_app_dir_name/app`).
+4. Configure your virtual host. Note: you can use any text editor (nano, etc.) in place of vim.
+```
+$ sudo vim /etc/apache2/sites-available/APP_NAME.conf
+```
+Paste the following template in the `.conf` file:
 ```
 <VirtualHost *:80>
-		ServerName YOUR_IP_ADDRESS
-		ServerAdmin my_username@YOUR_IP_ADDRESS
-		WSGIScriptAlias / /var/www/your_app_dir_name/your_app_name.wsgi
-		<Directory /var/www/your_app_python_dir/>
-			Order allow,deny
-			Allow from all
-		</Directory>
-		Alias /static /var/www/your_app_python_dir/static
-		<Directory /var/www/your_app_python_dir/static/>
-			Order allow,deny
-			Allow from all
-		</Directory>
-		ErrorLog ${APACHE_LOG_DIR}/error.log
-		LogLevel warn
-		CustomLog ${APACHE_LOG_DIR}/access.log combined
+    ServerName DROPLET_IP_ADDRESS
+    ServerAdmin USERNAME@DROPLET_IP_ADDRESS
+    WSGIScriptAlias / /var/www/APP_NAME/APP_NAME.wsgi
+    <Directory /var/www/APP_NAME/APP_SCRIPTS/>
+        Order allow,deny
+	Allow from all
+    </Directory>
+    Alias /static /var/www/APP_NAME/APP_SCRIPTS/static
+    <Directory /var/www/APP_NAME/APP_SCRIPTS/static/>
+        Order allow,deny
+	Allow from all
+    </Directory>
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    LogLevel warn
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 ```
 Save and close the file. For vim users, type `:wq`.
 
-11. Enable the virtual host.
+5. Enable the virtual host.
 ```
-$ sudo a2ensite your_app_name
+$ sudo a2ensite APP_NAME
 ```
-12. Create a .wsgi file.
+To disable your site later (in order to deploy a different app, for example), use
 ```
-$ cd /var/www/your_app_dir_name
-$ sudo vim your_app_name.wsgi
+$ sudo a2dissite APP_NAME
 ```
-Paste the following template, replacing the placeholders, and save and close the file.
+6. Create your `.wsgi` file.
+```
+$ cd /var/www/APP_NAME
+$ sudo vim APP_NAME.wsgi
+```
+Paste the following template:
 ```python
 #!/usr/bin/python
 import sys
@@ -94,13 +92,15 @@ import logging
 from os import urandom
 
 logging.basicConfig(stream=sys.stderr)
-sys.path.insert(0,"/var/www/your_app_dir_name/")
-sys.path.insert(0,"/var/www/your_app_dir_name/app/") # If your __init__.py imports any local python modules (i.e. ones in the same diretory that you wrote), this line will be necessary
+sys.path.insert(0,"/var/www/APP_NAME/")
+sys.path.insert(0,"/var/www/APP_NAME/APP_SCRIPTS/")
 
-from your_app_python_dir import app as application
+from APP_SCRIPTS import app as application
 application.secret_key = urandom(32)
 ```
-13. Restart apache.
+Save and close the `.wsgi` file.
+
+7. Restart apache.
 ```
 $ sudo service apache2 restart
 ```
@@ -110,14 +110,14 @@ Could not reliably determine the VPS's fully qualified domain name, using 127.0.
 ```
 This is okay; you'll still able to access your virtual host without further issues.
 
-14. Test your app by going to `http://YOUR_IP_ADDRESS` in a web browser.
+8. Test your app by going to `http://DROPLET_IP_ADDRESS` in a web browser.
 
 ### Resources
 * https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
 
 ---
 
-Accurate as of (last update): 2022-01-19
+Accurate as of (last update): 2022-01-20
 
 #### Contributors:  
 Christopher Liu, pd1  
