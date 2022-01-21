@@ -69,7 +69,7 @@ Paste the following template in the `.conf` file:
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 ```
-Note: In order to deploy multiple apps, you won't be able to deploy both at the top-level route. You can change the `WSGIScriptAlias` from `/` and `/static` to `APP_NAME` and `APP_NAME/static`. [Include part about fixing Flask routes]
+Note: In order to deploy multiple apps, you won't be able to deploy both at the top-level route. You can change the `WSGIScriptAlias` from `/` and `/static` to `APP_NAME` and `APP_NAME/static`.
 
 Save and close the file. For vim users, type `:wq`.
 
@@ -97,9 +97,15 @@ logging.basicConfig(stream=sys.stderr)
 sys.path.insert(0,"/var/www/APP_NAME/")
 sys.path.insert(0,"/var/www/APP_NAME/APP_SCRIPTS/")
 
-from APP_SCRIPTS import app as application
-application.secret_key = urandom(32)
+def application(environ, start_response):
+    from app import app as _application
+    return _application(environ, start_response)
+
+if __name__ == "__main__":
+    _application.run()
 ```
+Note: if you're running this app on anything other than the root path (just your IP address or domain name), you may need to use `environ["SCRIPT_NAME"] = "APP_NAME"` before you import your app in the `application` method. Whether this is necessary depends on whether you used explicit paths in links within your app (e.g., `<a href="/login">`) or generated links (e.g., `<a href="{{ url_for('login') }}">`. Generated links are preferred since they will not require any changes to the `.wsgi` file.
+
 Save and close the `.wsgi` file.
 
 7. Restart apache.
