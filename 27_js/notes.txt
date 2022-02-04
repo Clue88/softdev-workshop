@@ -1,0 +1,18 @@
+Team PurplePotatoes2: Christopher Liu, Deven Maheshwari
+SoftDev pd0
+K27 -- Basic functions in JavaScript
+2022-02-04
+
+DISCO
+-----------------------------------------------------------------
+* Best way to write the function?
+=================================================================
+
+QCC
+-----------------------------------------------------------------
+* Many ways to write a function: arrow functions (similar to lambda), traditional functions
+* Ternary operator is like the Scheme if operator (boolean) ? true_thing : false_thing
+* let and const >> var
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+=================================================================
+
