@@ -77,6 +77,8 @@ function fib2 (n) {
   return (fib2(n-1) + fib2(n-2))
 }
 
+fib(4);
+
 // FAC
 function fac (n) {
   let item = document.getElementById("fac");
@@ -87,6 +89,8 @@ function fac2 (n) {
   if (n <= 1) return 1;
   return n * fac2(n-1);
 }
+
+fac(5);
 
 // GCD
 function gcd (a, b) {
@@ -102,3 +106,5 @@ function gcd2 (a, b) {
   if (d == 0) return c;
   return gcd2(d, c % d);
 }
+
+gcd(4, 6);
