@@ -1,7 +1,7 @@
-// Team PurplePotatoes2 :: Christopher Liu, Deven Maheshwari
+// Team PurplePotatoes :: Christopher Liu, Zhaoyu Lin
 // SoftDev pd0
-// K28 -- Getting more comfortable with the dev console and the DOM
-// 2022-02-08t
+// K29 -- Getting more comfortable with the dev console and the DOM
+// 2022-02-09w
 // --------------------------------------------------
 
 
@@ -77,7 +77,14 @@ function fib2 (n) {
   return (fib2(n-1) + fib2(n-2))
 }
 
-fib(4);
+fib(0);
+let fibCount = 0;
+function incrementFib () {
+  fibCount++;
+  fib(fibCount);
+}
+
+document.getElementById("fibButton").addEventListener("click", incrementFib);
 
 // FAC
 function fac (n) {
@@ -90,7 +97,14 @@ function fac2 (n) {
   return n * fac2(n-1);
 }
 
-fac(5);
+fac(0);
+let facCount = 0;
+function incrementFac () {
+  facCount++;
+  fac(facCount);
+}
+
+document.getElementById("facButton").addEventListener("click", incrementFac);
 
 // GCD
 function gcd (a, b) {
@@ -108,3 +122,9 @@ function gcd2 (a, b) {
 }
 
 gcd(4, 6);
+document.getElementById("gcdButton").addEventListener("click", () => {
+  gcd(
+    document.getElementById("gcd1").value,
+    document.getElementById("gcd2").value
+  );
+});
