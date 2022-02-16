@@ -5,18 +5,15 @@
 
 // model for HTML5 canvas-based animation
 
-// SKEELTON
-
-
-//access canvas and buttons via DOM
+// access canvas and buttons via DOM
 let c = document.getElementById("playground");
 let dotButton = document.getElementById("buttonCircle");
 let stopButton = document.getElementById("buttonStop");
 
-//prepare to interact with canvas in 2D
+// prepare to interact with canvas in 2D
 let ctx = c.getContext("2d");
 
-//set fill color to team color
+// set fill color to team color
 ctx.fillStyle = "purple";
 
 let requestID;  // init global let for use with animation frames
@@ -33,7 +30,10 @@ let growing = true;
 
 
 let drawDot = () => {
-  console.log("drawDot invoked...")
+  console.log("drawDot invoked...");
+
+  window.cancelAnimationFrame(requestID);
+  clear();
 
   if (growing) {
     radius += 2;
@@ -41,58 +41,25 @@ let drawDot = () => {
     radius -= 2;
   }
   
-  clear();
-  ctx.beginPath;
+  ctx.beginPath();
   ctx.arc(c.clientWidth/2, c.clientHeight/2, radius, 0, 360);
   ctx.fill();
+  ctx.stroke();
   
-  if (radius >= 250) {
-    console.log("too big");
-    window.cancelAnimationFrame(requestID);
+  if (radius >= c.clientWidth/2) {
     growing = false;
-    clear();
-    requestID = window.requestAnimationFrame(drawDot);
   } else if (radius <= 0) {
-    console.log("too small");
-    window.cancelAnimationFrame(requestID);
     growing = true;
-    clear();
-    requestID = window.requestAnimationFrame(drawDot);
-  } else {
-    console.log("just right");
-    requestID = window.requestAnimationFrame(drawDot);
   }
-  
 
-  // YOUR CODE HERE
-
-  /*
-    ...to
-    Wipe the canvas,
-    Repaint the circle,
-
-    ...and somewhere (where/when is the right time?)
-    Update requestID to propagate the animation.
-    You will need
-    window.cancelAnimationFrame()
-    window.requestAnimationFrame()
-
-   */
+  requestID = window.requestAnimationFrame(drawDot);
 };
 
 
 let stopIt = () => {
   console.log("stopIt invoked...")
-  console.log( requestID );
-
-  // YOUR CODE HERE
-  /*
-    ...to
-    Stop the animation
-
-    You will need
-    window.cancelAnimationFrame()
-  */
+  console.log(requestID);
+  window.cancelAnimationFrame(requestID);
 };
 
 
