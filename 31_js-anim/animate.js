@@ -44,7 +44,6 @@ let drawDot = () => {
   ctx.beginPath();
   ctx.arc(c.clientWidth/2, c.clientHeight/2, radius, 0, 360);
   ctx.fill();
-  ctx.stroke();
   
   if (radius >= c.clientWidth/2) {
     growing = false;
