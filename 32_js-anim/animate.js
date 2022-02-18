@@ -53,26 +53,36 @@ let drawDot = () => {
 };
 
 
+// set up image eleemnt
 let img = new Image(60, 40);
-img.src = "logo_dvd.jpg";
+img.src = "logo_dvd.png";
+
+// initialize x and y position and velocity variables
 let x = Math.floor(Math.random() * (c.width - img.width));
 let y = Math.floor(Math.random() * (c.height - img.height));
 let xVelo = -1;
 let yVelo = Math.PI;
+let hue = 90;
 
 let drawDvd = () => {
   console.log("screensaving");
   requestID = window.cancelAnimationFrame(requestID);
   clear();
   ctx.beginPath();
+  ctx.filter = `invert() saturate(50%) hue-rotate(${hue}deg)`;
   ctx.drawImage(img, x, y, img.width, img.height);
+  ctx.filter = "none";
 
   if (x <= 0 || x >= c.width - img.width) {
     xVelo = -1 * xVelo;
+    hue += 45;
+    hue %= 360;
   }
 
   if (y <= 0 || y >= c.height - img.height) {
     yVelo = -1 * yVelo;
+    hue += 45;
+    hue %= 360;
   }
 
   x += xVelo;
