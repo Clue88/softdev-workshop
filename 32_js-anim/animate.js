@@ -12,9 +12,6 @@ let stopButton = document.getElementById("buttonStop");
 // prepare to interact with canvas in 2D
 let ctx = c.getContext("2d");
 
-// set fill color to team color
-ctx.fillStyle = "purple";
-
 let requestID;  // init global let for use with animation frames
 
 
@@ -41,6 +38,7 @@ let drawDot = () => {
 
   ctx.beginPath();
   ctx.arc(c.clientWidth / 2, c.clientHeight / 2, radius, 0, 360);
+  ctx.fillStyle = "purple";
   ctx.fill();
 
   if (radius >= c.clientWidth / 2) {
@@ -68,6 +66,10 @@ let drawDvd = () => {
   console.log("screensaving");
   requestID = window.cancelAnimationFrame(requestID);
   clear();
+
+  ctx.fillStyle = "black";
+  ctx.fillRect(0, 0, c.width, c.height);
+
   ctx.beginPath();
   ctx.filter = `invert() saturate(50%) hue-rotate(${hue}deg)`;
   ctx.drawImage(img, x, y, img.width, img.height);
