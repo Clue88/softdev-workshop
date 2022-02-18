@@ -67,19 +67,19 @@ let stripe = function () {
 
 // insert your implementations here for...
 // FIB
-function fib (n) {
+function fib(n) {
   let item = document.getElementById("fib");
   item.innerHTML = `fib(${n}) = ${fib2(n)}`
 }
 
-function fib2 (n) {
+function fib2(n) {
   if (n <= 1) return n;
-  return (fib2(n-1) + fib2(n-2))
+  return (fib2(n - 1) + fib2(n - 2))
 }
 
 fib(0);
 let fibCount = 0;
-function incrementFib () {
+function incrementFib() {
   fibCount++;
   fib(fibCount);
 }
@@ -87,19 +87,19 @@ function incrementFib () {
 document.getElementById("fibButton").addEventListener("click", incrementFib);
 
 // FAC
-function fac (n) {
+function fac(n) {
   let item = document.getElementById("fac");
   item.innerHTML = `fac(${n}) = ${fac2(n)}`
 }
 
-function fac2 (n) {
+function fac2(n) {
   if (n <= 1) return 1;
-  return n * fac2(n-1);
+  return n * fac2(n - 1);
 }
 
 fac(0);
 let facCount = 0;
-function incrementFac () {
+function incrementFac() {
   facCount++;
   fac(facCount);
 }
@@ -107,12 +107,12 @@ function incrementFac () {
 document.getElementById("facButton").addEventListener("click", incrementFac);
 
 // GCD
-function gcd (a, b) {
+function gcd(a, b) {
   let item = document.getElementById("gcd");
   item.innerHTML = `gcd(${a}, ${b}) = ${gcd2(a, b)}`
 }
 
-function gcd2 (a, b) {
+function gcd2(a, b) {
   let c = Math.max(a, b);
   let d = Math.min(a, b);
 

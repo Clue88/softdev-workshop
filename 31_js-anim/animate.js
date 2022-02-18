@@ -40,12 +40,12 @@ let drawDot = () => {
   } else {
     radius -= 2;
   }
-  
+
   ctx.beginPath();
-  ctx.arc(c.clientWidth/2, c.clientHeight/2, radius, 0, 360);
+  ctx.arc(c.clientWidth / 2, c.clientHeight / 2, radius, 0, 360);
   ctx.fill();
-  
-  if (radius >= c.clientWidth/2) {
+
+  if (radius >= c.clientWidth / 2) {
     growing = false;
   } else if (radius <= 0) {
     growing = true;

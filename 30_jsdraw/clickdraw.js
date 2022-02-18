@@ -7,7 +7,7 @@ let ctx = c.getContext("2d");
 // init global state var
 let mode = "rect";
 
-let toggleMode = function(e) {
+let toggleMode = function (e) {
     console.log("toggling...");
     if (mode === "rect") {
         mode = "circle";
@@ -18,7 +18,7 @@ let toggleMode = function(e) {
     }
 }
 
-let drawRect = function(e) {
+let drawRect = function (e) {
     let mouseX = e.offsetX;
     let mouseY = e.offsetY;
     console.log("mouseclick registered at ", mouseX, mouseY);
@@ -29,7 +29,7 @@ let drawRect = function(e) {
     ctx.fill();
 }
 
-let drawCircle = function(e) {
+let drawCircle = function (e) {
     let mouseX = e.offsetX;
     let mouseY = e.offsetY;
     console.log("mouseclick registered at ", mouseX, mouseY);
@@ -42,7 +42,7 @@ let drawCircle = function(e) {
     ctx.stroke();
 }
 
-let draw = function(e) {
+let draw = function (e) {
     if (mode === "rect") {
         drawRect(e);
     } else {
@@ -50,7 +50,7 @@ let draw = function(e) {
     }
 }
 
-let wipeCanvas = function() {
+let wipeCanvas = function () {
     console.log("wiping canvas...")
     ctx.clearRect(0, 0, c.clientWidth, c.clientHeight);
 }
