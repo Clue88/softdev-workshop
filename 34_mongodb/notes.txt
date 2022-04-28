@@ -1,0 +1,11 @@
+Christopher Liu
+SoftDev pd1
+K34 -- MongoDB Intro
+2022-04-27w
+
+- Flexible data structures and design patterns
+- Design patterns depend on application design (are we optimizing for
+performance, complexity, etc.)
+- MongoDB allows us to make changes to different data schemas without downtime
+    - Data should have a "schema" field in order to make it easier to switch
+      between different versions
