@@ -1,0 +1,37 @@
+Christopher Liu
+SoftDev pd1
+K36 -- MongoDB 101 Chapter 2
+2022-04-28r
+
+- JSON: JavaScript Standard Object Notation
+    - Must start and end with curly braces
+    - Keys must be surrounded by quotes
+    - Keys and values are separated by colons
+    - Key-value pairs are separated by commas
+    - Human-readable
+- BSON: Binary JSON
+    - Benefits of binary storage plus benefits of JSON
+    - Performant but has general-purpose focus
+    - Also has more data types
+    - Not human-readable
+- MongoDB stores data in BSON but it can be easily exported as JSON and we can
+  think about documents as JSON documents
+
+- Export methods:
+    - mongodump --uri to export in BSON
+    - mongoexport --uri --collection --out to export in JSON
+- URI: Uniform Resource Identifier
+- Import methods:
+    - mongorestore --uri --drop to import from BSON
+    - mongoimport --uri --drop [--collection] to import from JSON
+
+- Some useful commands:
+    - mongo "mongodb+srv://m001-student:m001-mongodb-basics@sandbox.SECRET.mongodb.net/admin"
+    - show dbs
+    - use <database_name>
+    - show collections
+    - db.<collection_name>.find(<query>)
+    - db.<collection_name>.find(<query>).count()
+    - db.<collection_name>.find(<query>).pretty()
+- mongo shell allows us to interact with a database without a GUI
+    - It is also a fully functioning JS interpreter
