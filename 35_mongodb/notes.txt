@@ -1,0 +1,13 @@
+Christopher Liu
+SoftDev pd1
+K35 -- MongoDB 101 Chapter 1
+2022-04-28r
+
+- MongoDB: a NoSQL database (structured way to access and store data without
+  rows and columns)
+- A "document" is the basic building block of a MongoDB database--it has fields
+  and values
+    - Fields are unique identifiers with exactly one value associated with it
+- Documents can be group in "collections"
+- Atlas is a cloud database, also created by MongoDB, that allows users to
+  easily deploy MongoDB in the cloud
