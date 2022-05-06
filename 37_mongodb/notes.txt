@@ -1,0 +1,21 @@
+Christopher Liu
+SoftDev pd1
+K36 -- MongoDB 101 Chapter 3
+2022-04-03t
+
+- Every MongoDB document has an _id field with a unique value
+- When inserting a new document we can omit the _id field to get a randomly
+  generated unique ID
+
+- Useful commands:
+    - db.<collection_name>.findOne()
+    - db.<collection_name>.insert(<document>)
+    - db.<collection_name>.insert(<list_of_documents>, { "ordered": false })
+    - db.<collection_name>.updateOne(<query>, <update_operators>)
+    - db.<collection_name>.updateMany(<query>, <update_operators>)
+        - "$inc": {<field>: <increment_value>}
+        - "$set": {<field>: <new_value>}
+        - "$push": {<array_field>: <new_value>}
+    - db.<collection_name>.deleteOne(<query>)
+    - db.<collection_name>.deleteMany(<query>)
+    - db.<collection_name>.drop()
