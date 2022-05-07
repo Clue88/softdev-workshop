@@ -1,0 +1,28 @@
+Christopher Liu
+SoftDev pd1
+K38 -- MongoDB 101 Chapter 4
+2022-05-06f
+
+- Comparison Operators ({ <field>: { <operator>: <value> } }):
+    - $eq (is there ever a case to use this if it's always implicit?)
+    - $ne
+    - $gt
+    - $lt
+    - $gte
+    - $lte
+- Logical Operators ({ <operator>: [{statement1}, {statement2}, ...]}):
+    - $and
+    - $or
+    - $nor
+    - $not
+- An explicit $and is necessary if there are multiple conditions that use the
+  same key.
+- $expr is the expressive query operator.
+    - { "$expr": { <expression> } }
+- Array Operators:
+    - $all
+    - $size
+    - $elemMatch
+- db.<collection_name>.find({ <query> }, { <projection> })
+    - 1 to include, 0 to exclude.
+    - Can only use 1 or 0 (no mixing except for excluding _id).
