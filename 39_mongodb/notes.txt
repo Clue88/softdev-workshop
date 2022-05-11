@@ -1,0 +1,10 @@
+Christopher Liu
+SoftDev pd1
+K38 -- MongoDB 101 Chapter 5
+2022-05-11w
+
+- .aggregate allows us to use the aggreagtion framework.
+    - Ordered data pipeline
+    - Far more powerful than MQL but can also do everything that MQL can.
+- Data modeling is a way to organize fields in a document to support your
+  application performance and querying capabilities
